@@ -1,8 +1,10 @@
-package com.medisupply.platform.u20241a195.shared.domain.model;
+package com.medisupply.platform.u20241a195.shared.domain.model.aggregates;
 import org.jspecify.annotations.NullMarked;
 import org.springframework.data.domain.AbstractAggregateRoot;
 
 import java.util.Collection;
+import java.util.Date;
+
 @NullMarked
 
 public abstract class AbstractDomainAggregateRoot <T extends AbstractDomainAggregateRoot<T>>
@@ -18,4 +20,6 @@ public abstract class AbstractDomainAggregateRoot <T extends AbstractDomainAggre
     public void clearDomainEvents() {
         super.clearDomainEvents();
     }
+
+    public abstract void assignPersistenceData(Long id, Date createdAt, Date updatedAt);
 }
