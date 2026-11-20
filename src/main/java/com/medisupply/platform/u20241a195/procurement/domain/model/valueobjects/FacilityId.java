@@ -3,7 +3,7 @@ import java.util.UUID;
 public record FacilityId(UUID value) {
     public FacilityId{
         if(value==null){
-            throw new IllegalArgumentException("Faciltiy id must not be unll");
+            throw new IllegalArgumentException("Faciltiy id must not be null");
         }
     }
 }
